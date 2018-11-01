@@ -1,6 +1,6 @@
+const omit = require('lodash/omit')
 const React = require('react')
 const {canvasStyle, mirrorProps} = require('./common')
-const {omit} = require('./helpers')
 
 function prevSibling (node, count) {
   while (node && count--) {
