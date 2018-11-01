@@ -28,6 +28,7 @@
   "license": "MIT",
   "repository": "xiaody/react-lines-ellipsis",
   "peerDependencies": {
+    "lodash": "*",
     "react": "*",
     "react-dom": "*"
   },
