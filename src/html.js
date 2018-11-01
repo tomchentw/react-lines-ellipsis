@@ -1,5 +1,6 @@
 const omit = require('lodash/omit')
 const toArray = require('lodash/toArray')
+const find = require('lodash/find')
 const React = require('react')
 const {canvasStyle, mirrorProps} = require('./common')
 
@@ -161,7 +162,7 @@ class HTMLEllipsis extends React.Component {
     const len = nlUnits.length
     if (!nlUnits.length) return indexes
 
-    const nd1stLayoutUnit = nlUnits.find(affectLayout)
+    const nd1stLayoutUnit = find(nlUnits, affectLayout)
     if (!nd1stLayoutUnit) return indexes
 
     let line = 1
