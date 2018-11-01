@@ -1,4 +1,5 @@
 const omit = require('lodash/omit')
+const toArray = require('lodash/toArray')
 const React = require('react')
 const {canvasStyle, mirrorProps} = require('./common')
 
@@ -15,7 +16,7 @@ function hookNode (node, basedOn) {
         units = node.textContent.split(/\b|(?=\W)/)
         break
       case 'letters':
-        units = Array.from(node.textContent)
+        units = toArray(node.textContent)
         break
     }
     units.forEach((unit) => {
@@ -156,7 +157,7 @@ class HTMLEllipsis extends React.Component {
 
   calcIndexes () {
     const indexes = [0]
-    const nlUnits = this.nlUnits = Array.from(this.canvas.querySelectorAll('.LinesEllipsis-unit'))
+    const nlUnits = this.nlUnits = toArray(this.canvas.querySelectorAll('.LinesEllipsis-unit'))
     const len = nlUnits.length
     if (!nlUnits.length) return indexes
 
