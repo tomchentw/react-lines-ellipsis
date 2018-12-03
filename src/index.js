@@ -1,6 +1,7 @@
+const omit = require('lodash/omit')
+const toArray = require('lodash/toArray')
 const React = require('react')
 const {canvasStyle, mirrorProps} = require('./common')
-const {omit} = require('./helpers')
 
 function prevSibling (node, count) {
   while (node && count--) {
@@ -91,7 +92,7 @@ class LinesEllipsis extends React.Component {
         this.units = props.text.split(/\b|(?=\W)/)
         break
       case 'letters':
-        this.units = Array.from(props.text)
+        this.units = toArray(props.text)
         break
       default:
         throw new Error(`Unsupported options basedOn: ${basedOn}`)
